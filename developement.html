@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projets Web - Portfolio</title>
+    <link rel="stylesheet" href="css/css.css">
+     <script defer>
+        // Gérer les carousels
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.Carousel').forEach((carousel, idx) => {
+                if (!carousel.id) {
+                    carousel.id = `carousel-${idx}`;
+                }
+                
+                const slides = carousel.querySelectorAll(':scope > img, :scope > .carousel-slide');
+                slides.forEach((slide, i) => {
+                    if (i > 0) {
+                        slide.style.display = 'none';
+                    }
+                });
+                
+                // Ajouter les événements aux boutons
+                const buttons = carousel.querySelectorAll('.carousel-btn');
+                buttons.forEach((btn, btnIdx) => {
+                    btn.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        const direction = btnIdx === 0 ? -1 : 1;
+                        changeCarouselSlide(carousel, direction);
+                    });
+                });
+                
+                // Ajouter les événements aux indicateurs
+                const indicators = carousel.parentElement.querySelectorAll('.carousel-indicators .indicator');
+                indicators.forEach((ind, i) => {
+                    ind.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        goToCarouselSlide(carousel, i);
+                    });
+                });
+            });
+        });
+
+        function changeCarouselSlide(carousel, direction) {
+            const slides = carousel.querySelectorAll(':scope > img, :scope > .carousel-slide');
+            const indicators = carousel.parentElement.querySelectorAll('.carousel-indicators .indicator');
+            
+            let current = 0;
+            slides.forEach((slide, i) => {
+                if (slide.style.display !== 'none') {
+                    current = i;
+                }
+            });
+            
+            current = (current + direction + slides.length) % slides.length;
+            
+            // Masquer toutes les slides
+            slides.forEach(slide => {
+                slide.style.display = 'none';
+            });
+            
+            // Afficher la slide actuelle
+            slides[current].style.display = 'block';
+            
+            // Mettre à jour les indicateurs
+            indicators.forEach((ind, i) => {
+                ind.classList.toggle('active', i === current);
+            });
+        }
+
+        function goToCarouselSlide(carousel, index) {
+            const slides = carousel.querySelectorAll(':scope > img, :scope > .carousel-slide');
+            const indicators = carousel.parentElement.querySelectorAll('.carousel-indicators .indicator');
+            
+            // Masquer toutes les slides
+            slides.forEach(slide => {
+                slide.style.display = 'none';
+            });
+            
+            // Afficher la slide à l'index
+            slides[index].style.display = 'block';
+            
+            // Mettre à jour les indicateurs
+            indicators.forEach((ind, i) => {
+                ind.classList.toggle('active', i === index);
+            });
+        }
+
+        function openLightbox(src) {
+            const lightbox = document.getElementById('lightbox');
+            document.getElementById('lightboxImg').src = src;
+            lightbox.classList.add('active');
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (document.getElementById('lightbox').classList.contains('active')) {
+                if (e.key === 'Escape') closeLightbox();
+            }
+        });
+    </script>
+    <style>
+        .image video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .lightbox-video {
+            max-width: 100%;
+            max-height: 85vh;
+            border-radius: 20px;
+            box-shadow: 0 0 50px rgba(102, 126, 234, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="index.html#about">À propos</a></li>
+            <li><a href="index.html#skills">Compétences</a></li>
+            <li><a href="index.html#portfolio">Portfolio</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="header">
+        <h1>Projets de Développement Web</h1>
+        <p>Tous mes projets web</p>
+    </div>
+
+    <!-- Projet 1 -->
+    <div class="blok">
+        <div class="image">
+            <img src="image/web.png" alt="Site Web HTML" onclick="openLightbox(this.src)">
+        </div>
+        <div class="content">
+            <h3>Site Web HTML/CSS</h3>
+            <p>Développement d'un site web en HTML et CSS sur l'histoire d'un univers fantastique (Cyberpunk 2077).</p>
+        </div>
+    </div>
+
+    <!-- Projet 2 -->
+    <div class="blok">
+        <div class="image">
+            <video src="image/videoSAE303.mp4" controls muted loop onclick="openLightbox(this.src)"></video>
+        </div>
+        <div class="content">
+            <h3>Page Web Article</h3>
+            <p>Création d'une page web avec librairie et infographie interactive.</p>
+        </div>
+    </div>
+    <div class="blok">
+        <div class="image">
+            <video src="image/Bouton site book.mp4" controls muted loop onclick="openLightbox(this.src)"></video>
+        </div>
+        <div class="content">
+            <h3>Page de Portfolio</h3>
+            <p>Création d'une page web sur wordpresse presentation des bouton.</p>
+        </div>
+    </div>
+    <div class="blok">
+        <div class="image">
+            <video src="image/video site book.mp4" controls muted loop onclick="openLightbox(this.src)"></video>
+        </div>
+        <div class="content">
+            <h3>Page de Portfolio</h3>
+            <p>Création d'une page web sur wordpresse presentation des page.</p>
+        </div>
+    </div>
+</body>
+</html>

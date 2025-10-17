@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mes Projets 3D - Portfolio</title>
+    <link rel="stylesheet" href="css/css.css">
+     <script defer>
+        // Gérer les carousels
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.Carousel').forEach((carousel, idx) => {
+                if (!carousel.id) {
+                    carousel.id = `carousel-${idx}`;
+                }
+                
+                const slides = carousel.querySelectorAll(':scope > img, :scope > .carousel-slide');
+                slides.forEach((slide, i) => {
+                    if (i > 0) {
+                        slide.style.display = 'none';
+                    }
+                });
+                
+                // Ajouter les événements aux boutons
+                const buttons = carousel.querySelectorAll('.carousel-btn');
+                buttons.forEach((btn, btnIdx) => {
+                    btn.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        const direction = btnIdx === 0 ? -1 : 1;
+                        changeCarouselSlide(carousel, direction);
+                    });
+                });
+                
+                // Ajouter les événements aux indicateurs
+                const indicators = carousel.parentElement.querySelectorAll('.carousel-indicators .indicator');
+                indicators.forEach((ind, i) => {
+                    ind.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        goToCarouselSlide(carousel, i);
+                    });
+                });
+            });
+        });
+
+        function changeCarouselSlide(carousel, direction) {
+            const slides = carousel.querySelectorAll(':scope > img, :scope > .carousel-slide');
+            const indicators = carousel.parentElement.querySelectorAll('.carousel-indicators .indicator');
+            
+            let current = 0;
+            slides.forEach((slide, i) => {
+                if (slide.style.display !== 'none') {
+                    current = i;
+                }
+            });
+            
+            current = (current + direction + slides.length) % slides.length;
+            
+            // Masquer toutes les slides
+            slides.forEach(slide => {
+                slide.style.display = 'none';
+            });
+            
+            // Afficher la slide actuelle
+            slides[current].style.display = 'block';
+            
+            // Mettre à jour les indicateurs
+            indicators.forEach((ind, i) => {
+                ind.classList.toggle('active', i === current);
+            });
+        }
+
+        function goToCarouselSlide(carousel, index) {
+            const slides = carousel.querySelectorAll(':scope > img, :scope > .carousel-slide');
+            const indicators = carousel.parentElement.querySelectorAll('.carousel-indicators .indicator');
+            
+            // Masquer toutes les slides
+            slides.forEach(slide => {
+                slide.style.display = 'none';
+            });
+            
+            // Afficher la slide à l'index
+            slides[index].style.display = 'block';
+            
+            // Mettre à jour les indicateurs
+            indicators.forEach((ind, i) => {
+                ind.classList.toggle('active', i === index);
+            });
+        }
+
+        function openLightbox(src) {
+            const lightbox = document.getElementById('lightbox');
+            document.getElementById('lightboxImg').src = src;
+            lightbox.classList.add('active');
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (document.getElementById('lightbox').classList.contains('active')) {
+                if (e.key === 'Escape') closeLightbox();
+            }
+        });
+    </script>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="index.html#about">À propos</a></li>
+            <li><a href="index.html#skills">Compétences</a></li>
+            <li><a href="index.html#portfolio">Portfolio</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="header">
+        <h1>Mes Projets 3D</h1>
+        <p>Découvrez mes réalisations dans cette catégorie</p>
+    </div>
+
+    <!-- Projet 1 -->
+    <div class="blok">
+        <div class="image">
+            <img src="image/Capture d'écran 2025-06-12 090547.png" alt="Modélisation 3D" onclick="openLightbox(this.src)">
+        </div>
+        <div class="content">
+            <h3>Modélisation 3D Architecturale</h3>
+            <p>Création d'un environnement 3D architectural avec Blender, incluant modélisation, texturing et éclairage.</p>
+        </div>
+    </div>
+
+    <!-- Projet 2 -->
+    <div class="blok">
+        <div class="image">
+            <img src="image/Capture d'écran 2025-06-12 090956.png" alt="Rendu Photoréaliste" onclick="openLightbox(this.src)">
+        </div>
+        <div class="content">
+            <h3>Rendu Photoréaliste</h3>
+            <p>Projet de rendu photoréaliste avec travail approfondi sur les matériaux et l'éclairage.</p>
+        </div>
+    </div>
+
+    <!-- Projet 3 - Carousel -->
+    <div class="blok">
+        <div id="carousel1" class="Carousel">
+            <img src="image/instagrame.png" alt="Rendu 3D 1" onclick="openLightbox(this.src)">
+            <div class="carousel-slide">
+                <img src="image/untitled.png" alt="Rendu 3D 2" onclick="openLightbox(this.src)">
+            </div>
+            <div class="carousel-slide">
+                <img src="image/projet1-3.jpg" alt="Rendu 3D 3" onclick="openLightbox(this.src)">
+            </div>
+            <div class="carousel-nav">
+                <button class="carousel-btn" onclick="changeSlide(event, -1)">❮</button>
+                <button class="carousel-btn" onclick="changeSlide(event, 1)">❯</button>
+            </div>
+            <div class="carousel-indicators">
+                <span class="indicator active" onclick="goToSlide(event, 0, 'carousel1')"></span>
+                <span class="indicator" onclick="goToSlide(event, 1, 'carousel1')"></span>
+                <span class="indicator" onclick="goToSlide(event, 2, 'carousel1')"></span>
+            </div>
+        </div>
+        <div class="content">
+            <h3>Série de Rendus 3D</h3>
+            <p>Collection de rendus 3D explorant différents styles et techniques de modélisation avec Blender.</p>
+        </div>
+    </div>
+
+    <!-- Projet 4 -->
+    <div class="blok">
+        <div class="image">
+            <img src="image/projet4.jpg" alt="Modélisation de Personnage" onclick="openLightbox(this.src)">
+        </div>
+        <div class="content">
+            <h3>Modélisation de Personnage</h3>
+            <p>Création complète d'un personnage 3D, de la modélisation au rigging pour l'animation.</p>
+        </div>
+    </div>
+
+    <!-- Projet 5 -->
+    <div class="blok">
+        <div class="image">
+            <img src="image/projet5.jpg" alt="Scène 3D Stylisée" onclick="openLightbox(this.src)">
+        </div>
+        <div class="content">
+            <h3>Scène 3D Stylisée</h3>
+            <p>Création d'une scène 3D complète avec un style artistique unique, incluant modélisation et composition.</p>
+        </div>
+    </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+        <div class="lightbox-content">
+            <img id="lightboxImg" class="lightbox-img" src="" alt="">
+        </div>
+    </div>
+</body>
+</html>

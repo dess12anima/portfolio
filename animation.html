@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mes Projets Animation - Portfolio</title>
+    <link rel="stylesheet" href="css/css.css">
+     <script defer>
+        // Gérer les carousels
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.Carousel').forEach((carousel, idx) => {
+                if (!carousel.id) {
+                    carousel.id = `carousel-${idx}`;
+                }
+                
+                const slides = carousel.querySelectorAll(':scope > img, :scope > .carousel-slide');
+                slides.forEach((slide, i) => {
+                    if (i > 0) {
+                        slide.style.display = 'none';
+                    }
+                });
+                
+                // Ajouter les événements aux boutons
+                const buttons = carousel.querySelectorAll('.carousel-btn');
+                buttons.forEach((btn, btnIdx) => {
+                    btn.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        const direction = btnIdx === 0 ? -1 : 1;
+                        changeCarouselSlide(carousel, direction);
+                    });
+                });
+                
+                // Ajouter les événements aux indicateurs
+                const indicators = carousel.parentElement.querySelectorAll('.carousel-indicators .indicator');
+                indicators.forEach((ind, i) => {
+                    ind.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        goToCarouselSlide(carousel, i);
+                    });
+                });
+            });
+        });
+
+        function changeCarouselSlide(carousel, direction) {
+            const slides = carousel.querySelectorAll(':scope > img, :scope > .carousel-slide');
+            const indicators = carousel.parentElement.querySelectorAll('.carousel-indicators .indicator');
+            
+            let current = 0;
+            slides.forEach((slide, i) => {
+                if (slide.style.display !== 'none') {
+                    current = i;
+                }
+            });
+            
+            current = (current + direction + slides.length) % slides.length;
+            
+            // Masquer toutes les slides
+            slides.forEach(slide => {
+                slide.style.display = 'none';
+            });
+            
+            // Afficher la slide actuelle
+            slides[current].style.display = 'block';
+            
+            // Mettre à jour les indicateurs
+            indicators.forEach((ind, i) => {
+                ind.classList.toggle('active', i === current);
+            });
+        }
+
+        function goToCarouselSlide(carousel, index) {
+            const slides = carousel.querySelectorAll(':scope > img, :scope > .carousel-slide');
+            const indicators = carousel.parentElement.querySelectorAll('.carousel-indicators .indicator');
+            
+            // Masquer toutes les slides
+            slides.forEach(slide => {
+                slide.style.display = 'none';
+            });
+            
+            // Afficher la slide à l'index
+            slides[index].style.display = 'block';
+            
+            // Mettre à jour les indicateurs
+            indicators.forEach((ind, i) => {
+                ind.classList.toggle('active', i === index);
+            });
+        }
+
+        function openLightbox(src) {
+            const lightbox = document.getElementById('lightbox');
+            document.getElementById('lightboxImg').src = src;
+            lightbox.classList.add('active');
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (document.getElementById('lightbox').classList.contains('active')) {
+                if (e.key === 'Escape') closeLightbox();
+            }
+        });
+    </script>
+    <style>
+        .image video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .lightbox-video {
+            max-width: 100%;
+            max-height: 85vh;
+            border-radius: 20px;
+            box-shadow: 0 0 50px rgba(102, 126, 234, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="index.html#about">À propos</a></li>
+            <li><a href="index.html#skills">Compétences</a></li>
+            <li><a href="index.html#portfolio">Portfolio</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="header">
+        <h1>Mes Projets Animation</h1>
+        <p>Découvrez mes réalisations dans cette catégorie</p>
+    </div>
+
+    <!-- Projet 1 -->
+    <div class="blok">
+        <div class="image">
+            <video src="image/videobookBUT.mp4" controls muted loop onclick="openLightbox(this.src)"></video>
+        </div>
+        <div class="content">
+            <h3>Stage d'hiver 2020</h3>
+            <p>Film d'animation stop motion réalisé lors d'un stage, créé de toute pièce du storyboard à la création des personnages et fonds.</p>
+        </div>
+    </div>
+
+    <!-- Projet 2 -->
+    <div class="blok">
+        <div class="image">
+            <video src="image/theguardiansae.mp4" controls muted loop onclick="openLightbox(this.src)"></video>
+        </div>
+        <div class="content">
+            <h3>The Guardian</h3>
+            <p>Animation dynamique explorant les techniques de motion capture et de rendu 3D.</p>
+        </div>
+    </div>
+
+    <!-- Projet 3 -->
+    <div class="blok">
+        <div class="image">
+            <video src="image/bookBUT.mp4" controls muted loop onclick="openLightbox(this.src)"></video>
+        </div>
+        <div class="content">
+            <h3>Animation Promotionnelle BUT</h3>
+            <p>Motion design réalisé pour promouvoir le BUT MMI, avec animations graphiques et textes animés.</p>
+        </div>
+    </div>
+
+    <!-- Projet 4 -->
+    <div class="blok">
+        <div class="image">
+            <video src="image/VID_20251009_081347_521.mp4" controls muted loop onclick="openLightbox(this.src)"></video>
+        </div>
+        <div class="content">
+            <h3>Animation 2D</h3>
+            <p>Série d'animations 2D explorant différentes techniques d'animation traditionnelle et numérique.</p>
+        </div>
+    </div>
+
+    <!-- Projet 5 -->
+    <div class="blok">
+        <div class="image">
+            <video src="image/VID_20251009_081400_810.mp4" controls muted loop onclick="openLightbox(this.src)"></video>
+        </div>
+        <div class="content">
+            <h3>Premier animation</h3>
+            <p>Création d'une animation 2D court.</p>
+        </div>
+    </div>
+
+    <!-- Projet 6 -->
+    <div class="blok">
+        <div class="image">
+            <video src="image/animatique.mkv" controls muted loop onclick="openLightbox(this.src)"></video>
+        </div>
+        <div class="content">
+            <h3>Proget d'une serie animée propre</h3>
+            <p>Proget personnel de cree d'une serie animée.</p>
+        </div>
+    </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+        <div class="lightbox-content">
+            <video id="lightboxVideo" class="lightbox-video" controls></video>
+        </div>
+    </div>
+</body>
+</html>
+
