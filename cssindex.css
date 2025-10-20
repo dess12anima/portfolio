@@ -221,18 +221,29 @@
             }
         }
 
-        .profile-image {
+       .profile-image {
             width: 100%;
-            aspect-ratio: 1;
+            max-width: 400px;
             background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             border-radius: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--white);
-            font-size: 5rem;
-            font-weight: bold;
+            overflow: hidden;
             box-shadow: var(--shadow-lg);
+            position: relative;
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            object-position: center;
+            transition: transform 0.3s ease;
+        }
+
+        .profile-image:hover img {
+            transform: scale(1.05);
         }
 
         section h2 {
@@ -539,4 +550,5 @@
 
         ::-webkit-scrollbar-thumb:hover {
             background: var(--secondary-color);
+
         }
