@@ -625,6 +625,7 @@
 
 /* Effet hover pour la vidéo aussi */
 .project-card:hover .project-image iframe {
-    transform: scale(1.1);
+    transform: scale(1.1); transform: scale(1.1);
 }
+
 
