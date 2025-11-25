@@ -1,4 +1,3 @@
-<!-- ========== PAGE GRAPHISME.HTML ========== -->
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -6,7 +5,259 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mes Projets Graphisme - Portfolio</title>
     <link rel="stylesheet" href="css.css">
-    <script defer>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="index.html#about">À propos</a></li>
+            <li><a href="index.html#skills">Compétences</a></li>
+            <li><a href="index.html#portfolio">Portfolio</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="header">
+        <h1>Mes Projets Graphisme</h1>
+        <p>Tous mes différents projets réalisés</p>
+    </div>
+
+    <!-- Projet 1 - Logo Poussinière -->
+    <div class="blok">
+        <div class="image">
+            <img src="Logo SAE.png" alt="Logo Poussinière 1" onclick="openLightbox(this.src)">
+        </div>
+        <div class="content">
+            <h3>Logo de la Poussinière</h3>
+            <p>Collaboration avec l'association du roi oiseau, où on a dû créer un nouveau logo pour sa filiale la Poussinière. Avec les contraintes de représenter de la meilleure manière la Poussinière qui propose différents ateliers reliés à l'ère médiévale comme la création, la tannerie, le travail du bois, la couture, et l'apprentissage sur les plantes.</p>
+        </div>
+    </div>
+
+    <!-- Projet 2 - Carousel Festival -->
+    <div class="blok">
+        <div class="carousel-wrapper">
+            <div id="carousel2" class="Carousel">
+                <img src="carousell-1.png" alt="Carousel Festival 1" onclick="openLightbox(this.src)">
+                <div class="carousel-slide">
+                    <img src="carousell-2.png" alt="Carousel Festival 2" onclick="openLightbox(this.src)">
+                </div>
+                <div class="carousel-slide">
+                    <img src="carousell-3.png" alt="Carousel Festival 3" onclick="openLightbox(this.src)">
+                </div>
+                <div class="carousel-slide">
+                    <img src="carousell-4.png" alt="Carousel Festival 4" onclick="openLightbox(this.src)">
+                </div>
+                <div class="carousel-nav">
+                    <button class="carousel-btn">❮</button>
+                    <button class="carousel-btn">❯</button>
+                </div>
+            </div>
+            <div class="carousel-indicators">
+                <span class="indicator active"></span>
+                <span class="indicator"></span>
+                <span class="indicator"></span>
+                <span class="indicator"></span>
+            </div>
+        </div>
+        <div class="content">
+            <h3>Carousel Festival</h3>
+            <p>Carousel pour Instagram présentant 2 infographies, une sur le total de festivals dans la région et chaque festival se déroulant dans la saison, l'après-saison, l'avant-saison, et n'appartenant à aucune saison. Dans la deuxième infographie sont les 5 régions les plus visitées avec le nombre de festivals se déroulant dans la région.</p>
+        </div>
+    </div>
+
+    <!-- Projet 3 - Carousel Olympique -->
+    <div class="blok">
+        <div class="carousel-wrapper">
+            <div id="carousel3" class="Carousel">
+                <img src="trophy-symbol-01.jpg" alt="Olympique 1" onclick="openLightbox(this.src)">
+                <div class="carousel-slide">
+                    <img src="trophy-symbol-02.jpg" alt="Olympique 2" onclick="openLightbox(this.src)">
+                </div>
+                <div class="carousel-slide">
+                    <img src="trophy-symbol-03.jpg" alt="Olympique 3" onclick="openLightbox(this.src)">
+                </div>
+                <div class="carousel-slide">
+                    <img src="trophy-symbol-04.jpg" alt="Olympique 4" onclick="openLightbox(this.src)">
+                </div>
+                <div class="carousel-nav">
+                    <button class="carousel-btn">❮</button>
+                    <button class="carousel-btn">❯</button>
+                </div>
+            </div>
+            <div class="carousel-indicators">
+                <span class="indicator active"></span>
+                <span class="indicator"></span>
+                <span class="indicator"></span>
+                <span class="indicator"></span>
+            </div>
+        </div>
+        <div class="content">
+            <h3>Carousel Olympique</h3>
+            <p>Carousel d'Instagram sur les olympiques de Paris, avec une infographie du top 6 des pays ayant le plus de médailles dans les olympiques de gymnastique artistique.</p>
+        </div>
+    </div>
+
+    <!-- Projet 4 - Carousel Interface Magazine -->
+    <div class="blok">
+        <div class="carousel-wrapper">
+            <div id="carousel4" class="Carousel">
+                <img src="interface premier couverture (1).JPG" alt="Interface Couverture" onclick="openLightbox(this.src)">
+                <div class="carousel-slide">
+                    <img src="interfaces (1).JPG" alt="Interface Page 4" onclick="openLightbox(this.src)">
+                </div>
+                <div class="carousel-nav">
+                    <button class="carousel-btn">❮</button>
+                    <button class="carousel-btn">❯</button>
+                </div>
+            </div>
+            <div class="carousel-indicators">
+                <span class="indicator active"></span>
+                <span class="indicator"></span>
+            </div>
+        </div>
+        <div class="content">
+            <h3>Interface - Magazine</h3>
+            <p>Proposition de la première page et quatrième page de couverture du magazine Interface avec un design moderne et épuré.</p>
+        </div>
+    </div>
+
+    <!-- Projet 5 - Mise en Page Article -->
+    <div class="blok">
+        <div class="image">
+            <img src="pagearticle.png" alt="Mise en page article" onclick="openLightbox(this.src)">
+        </div>
+        <div class="content">
+            <h3>Mise en Page Article</h3>
+            <p>Mise en page d'une double page du magazine Interface avec typographie professionnelle et mise en page harmonieuse.</p>
+        </div>
+    </div>
+
+    <!-- Projet 6 - Carousel Glitch Mug Thermique -->
+    <div class="blok">
+        <div class="carousel-wrapper">
+            <div id="carousel5" class="Carousel">
+                <img src="CEB87815-6020-46DA-9DCB-43A5B359FC5A.jpg" alt="Glitch Mug 1" onclick="openLightbox(this.src)">
+                <div class="carousel-slide">
+                    <img src="Decouvrer Nos Nouveaux Produits - 1.jpg" alt="Glitch Mug Affiche" onclick="openLightbox(this.src)">
+                </div>
+                <div class="carousel-nav">
+                    <button class="carousel-btn">❮</button>
+                    <button class="carousel-btn">❯</button>
+                </div>
+            </div>
+            <div class="carousel-indicators">
+                <span class="indicator active"></span>
+                <span class="indicator"></span>
+            </div>
+        </div>
+        <div class="content">
+            <h3>Glitch - Mug Thermique</h3>
+            <p>Création d'un logo pour un produit mug thermique avec une affiche pour présenter le produit de manière attrayante.</p>
+        </div>
+    </div>
+
+    <!-- Projet 7 - Carousel Illustrations -->
+    <div class="blok">
+        <div class="carousel-wrapper">
+            <div id="carousel6" class="Carousel">
+                <img src="dessin grand.png" alt="Illustration 1" onclick="openLightbox(this.src)">
+                <div class="carousel-slide">
+                    <img src="foret.png" alt="Illustration Forêt" onclick="openLightbox(this.src)">
+                </div>
+                <div class="carousel-slide">
+                    <img src="desugne perso.png" alt="Design Personnage" onclick="openLightbox(this.src)">
+                </div>
+                <div class="carousel-slide">
+                    <img src="iiiiii.png" alt="Illustration 4" onclick="openLightbox(this.src)">
+                </div>
+                <div class="carousel-slide">
+                    <img src="model.png" alt="Modèle" onclick="openLightbox(this.src)">
+                </div>
+                <div class="carousel-nav">
+                    <button class="carousel-btn">❮</button>
+                    <button class="carousel-btn">❯</button>
+                </div>
+            </div>
+            <div class="carousel-indicators">
+                <span class="indicator active"></span>
+                <span class="indicator"></span>
+                <span class="indicator"></span>
+                <span class="indicator"></span>
+                <span class="indicator"></span>
+            </div>
+        </div>
+        <div class="content">
+            <h3>Concept Art</h3>
+            <p>Collection du concept art de ma série personnelle.</p>
+        </div>
+    </div>
+
+    <!-- Projet 8 - Carousel Burger King -->
+    <div class="blok">
+        <div class="carousel-wrapper">
+            <div id="carousel7" class="Carousel">
+                <img src="burger king.png" alt="Burger King 1" onclick="openLightbox(this.src)">
+                <div class="carousel-slide">
+                    <img src="burger king2.png" alt="Burger King 2" onclick="openLightbox(this.src)">
+                </div>
+                <div class="carousel-slide">
+                    <img src="burger king3.png" alt="Burger King 3" onclick="openLightbox(this.src)">
+                </div>
+                <div class="carousel-nav">
+                    <button class="carousel-btn">❮</button>
+                    <button class="carousel-btn">❯</button>
+                </div>
+            </div>
+            <div class="carousel-indicators">
+                <span class="indicator active"></span>
+                <span class="indicator"></span>
+                <span class="indicator"></span>
+            </div>
+        </div>
+        <div class="content">
+            <h3>Mise en Page</h3>
+            <p>Mise en page d'une analyse sur la stratégie de communication de Burger King contre le harcèlement.</p>
+        </div>
+    </div>
+
+    <!-- Projet 9 - Carousel Hôpital -->
+    <div class="blok">
+        <div class="carousel-wrapper">
+            <div id="carousel8" class="Carousel">
+                <img src="poste hopital.pdf" alt="Post hôpital" onclick="openLightbox(this.src)">
+                <div class="carousel-slide">
+                    <img src="poste2.pdf" alt="Deuxième post hôpital" onclick="openLightbox(this.src)">
+                </div>
+                <div class="carousel-nav">
+                    <button class="carousel-btn">❮</button>
+                    <button class="carousel-btn">❯</button>
+                </div>
+            </div>
+            <div class="carousel-indicators">
+                <span class="indicator active"></span>
+                <span class="indicator"></span>
+            </div>
+        </div>
+        <div class="content">
+            <h3>Post pour l'Hôpital</h3>
+            <p>Collaboration entre l'hôpital Émile Roux et les 2ème année MMI, pour faire une campagne RSE. Avec mon groupe on a choisi de faire sur les handicapés et voici les posts que j'ai faits pour cette campagne.</p>
+        </div>
+    </div>
+
+    <div class="gmail">
+        <h2>Contactez-moi par Gmail</h2>
+        <p>nunezangelina07@gmail.com</p>
+    </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+        <div class="lightbox-content">
+            <img id="lightboxImg" class="lightbox-img" src="" alt="">
+        </div>
+    </div>
+
+    <script>
         // Gérer les carousels
         document.addEventListener('DOMContentLoaded', () => {
             document.querySelectorAll('.Carousel').forEach((carousel, idx) => {
@@ -32,19 +283,23 @@
                 });
                 
                 // Ajouter les événements aux indicateurs
-                const indicators = carousel.parentElement.querySelectorAll('.carousel-indicators .indicator');
-                indicators.forEach((ind, i) => {
-                    ind.addEventListener('click', (e) => {
-                        e.stopPropagation();
-                        goToCarouselSlide(carousel, i);
+                const wrapper = carousel.closest('.carousel-wrapper');
+                if (wrapper) {
+                    const indicators = wrapper.querySelectorAll('.carousel-indicators .indicator');
+                    indicators.forEach((ind, i) => {
+                        ind.addEventListener('click', (e) => {
+                            e.stopPropagation();
+                            goToCarouselSlide(carousel, i);
+                        });
                     });
-                });
+                }
             });
         });
 
         function changeCarouselSlide(carousel, direction) {
             const slides = carousel.querySelectorAll(':scope > img, :scope > .carousel-slide');
-            const indicators = carousel.parentElement.querySelectorAll('.carousel-indicators .indicator');
+            const wrapper = carousel.closest('.carousel-wrapper');
+            const indicators = wrapper ? wrapper.querySelectorAll('.carousel-indicators .indicator') : [];
             
             let current = 0;
             slides.forEach((slide, i) => {
@@ -71,7 +326,8 @@
 
         function goToCarouselSlide(carousel, index) {
             const slides = carousel.querySelectorAll(':scope > img, :scope > .carousel-slide');
-            const indicators = carousel.parentElement.querySelectorAll('.carousel-indicators .indicator');
+            const wrapper = carousel.closest('.carousel-wrapper');
+            const indicators = wrapper ? wrapper.querySelectorAll('.carousel-indicators .indicator') : [];
             
             // Masquer toutes les slides
             slides.forEach(slide => {
@@ -103,245 +359,5 @@
             }
         });
     </script>
-</head>
-<body>
-    <nav>
-        <ul>
-            <li><a href="index.html">Accueil</a></li>
-            <li><a href="index.html#about">À propos</a></li>
-            <li><a href="index.html#skills">Compétences</a></li>
-            <li><a href="index.html#portfolio">Portfolio</a></li>
-            <li><a href="index.html#contact">Contact</a></li>
-        </ul>
-    </nav>
-
-    <div class="header">
-        <h1>Mes Projets Graphisme</h1>
-        <p>Tous mes différents projets réalisés</p>
-    </div>
-
-    <!-- Projet 1 - Carousel Logo Poussiniére -->
-    <div class="blok">
-        <div class="image">
-            <img src="Logo SAE.png" alt="Logo Poussiniére 1" onclick="openLightbox(this.src)">
-        </div>
-        <div class="content">
-            <h3>Logo de la Poussiniére</h3>
-            <p>Collaboration avec l'association du roi oiseau, où on a dû créer un nouveau logo pour sa filiale la Poussiniére. Avec les contraintes de représenter de la meilleure manière la Poussiniére qui propose différents ateliers reliés à l'ère médiévale comme la création, la tannerie, le travail du bois, la couture, et l'apprentissage sur les plantes.</p>
-        </div>
-    </div>
-
-    <!-- Projet 2 - Carousel Festival -->
-    <div class="blok">
-        <div id="carousel2" class="Carousel">
-            <img src="carousell-1.png" alt="Carousel Festival 1" onclick="openLightbox(this.src)">
-            <div class="carousel-slide">
-                <img src="carousell-2.png" alt="Carousel Festival 2" onclick="openLightbox(this.src)">
-            </div>
-            <div class="carousel-slide">
-                <img src="carousell-3.png" alt="Carousel Festival 3" onclick="openLightbox(this.src)">
-            </div>
-            <div class="carousel-slide">
-                <img src="carousell-4.png" alt="Carousel Festival 4" onclick="openLightbox(this.src)">
-            </div>
-            <div class="carousel-nav">
-                <button class="carousel-btn" onclick="changeSlide(event, -1)">❮</button>
-                <button class="carousel-btn" onclick="changeSlide(event, 1)">❯</button>
-            </div>
-            <div class="carousel-indicators">
-                <span class="indicator active" onclick="goToSlide(event, 0, 'carousel2')"></span>
-                <span class="indicator" onclick="goToSlide(event, 1, 'carousel2')"></span>
-                <span class="indicator" onclick="goToSlide(event, 2, 'carousel2')"></span>
-                <span class="indicator" onclick="goToSlide(event, 3, 'carousel2')"></span>
-            </div>
-        </div>
-        <div class="content">
-            <h3>Carousel Festival</h3>
-            <p>Carousel pour Instagram présentant 2 infographies, une sur le total de festivals dans la région et chaque festival se déroulant dans la saison, l'après-saison, l'avant-saison, et n'appartenant à aucune saison. Dans la deuxième infographie sont les 5 régions les plus visitées avec le nombre de festivals se déroulant dans la région.</p>
-        </div>
-    </div>
-
-    <!-- Projet 3 - Carousel Olympique -->
-    <div class="blok">
-        <div id="carousel3" class="Carousel">
-            <img src="trophy-symbol-01.jpg" alt="Olympique 1" onclick="openLightbox(this.src)">
-            <div class="carousel-slide">
-                <img src="trophy-symbol-02.jpg" alt="Olympique 2" onclick="openLightbox(this.src)">
-            </div>
-            <div class="carousel-slide">
-                <img src="trophy-symbol-03.jpg" alt="Olympique 3" onclick="openLightbox(this.src)">
-            </div>
-            <div class="carousel-slide">
-                <img src="trophy-symbol-04.jpg" alt="Olympique 4" onclick="openLightbox(this.src)">
-            </div>
-            <div class="carousel-nav">
-                <button class="carousel-btn" onclick="changeSlide(event, -1)">❮</button>
-                <button class="carousel-btn" onclick="changeSlide(event, 1)">❯</button>
-            </div>
-            <div class="carousel-indicators">
-                <span class="indicator active" onclick="goToSlide(event, 0, 'carousel3')"></span>
-                <span class="indicator" onclick="goToSlide(event, 1, 'carousel3')"></span>
-                <span class="indicator" onclick="goToSlide(event, 2, 'carousel3')"></span>
-                <span class="indicator" onclick="goToSlide(event, 3, 'carousel3')"></span>
-            </div>
-        </div>
-        <div class="content">
-            <h3>Carousel Olympique</h3>
-            <p>Carousel d'Instagram sur les olympiques de Paris, avec une infographie du top 6 des pays ayant le plus de médailles dans les olympiques de gymnastique artistique.</p>
-        </div>
-    </div>
-
-    <!-- Projet 4 - Carousel Interface Magazine -->
-    <div class="blok">
-        <div id="carousel4" class="Carousel">
-            <img src="interface premier couverture (1).JPG" alt="Interface Couverture" onclick="openLightbox(this.src)">
-            <div class="carousel-slide">
-                <img src="interfaces (1).JPG" alt="Interface Page 4" onclick="openLightbox(this.src)">
-            </div>
-            <div class="carousel-nav">
-                <button class="carousel-btn" onclick="changeSlide(event, -1)">❮</button>
-                <button class="carousel-btn" onclick="changeSlide(event, 1)">❯</button>
-            </div>
-            <div class="carousel-indicators">
-                <span class="indicator active" onclick="goToSlide(event, 0, 'carousel4')"></span>
-                <span class="indicator" onclick="goToSlide(event, 1, 'carousel4')"></span>
-            </div>
-        </div>
-        <div class="content">
-            <h3>Interface - Magazine</h3>
-            <p>Proposition de la première page et quatrième page de couverture du magazine Interface avec un design moderne et épuré.</p>
-        </div>
-    </div>
-
-    <!-- Projet 5 - Mise en Page Article -->
-    <div class="blok">
-        <div class="image">
-            <img src="pagearticle.png" alt="Mise en page article" onclick="openLightbox(this.src)">
-        </div>
-        <div class="content">
-            <h3>Mise en Page Article</h3>
-            <p>Mise en page d'une double page du magazine Interface avec typographie professionnelle et mise en page harmonieuse.</p>
-        </div>
-    </div>
-
-    <!-- Projet 6 - Carousel Glitch Mug Thermique -->
-    <div class="blok">
-        <div id="carousel5" class="Carousel">
-            <img src="CEB87815-6020-46DA-9DCB-43A5B359FC5A.jpg" alt="Glitch Mug 1" onclick="openLightbox(this.src)">
-            <div class="carousel-slide">
-                <img src="Decouvrer Nos Nouveaux Produits - 1.jpg" alt="Glitch Mug Affiche" onclick="openLightbox(this.src)">
-            </div>
-            <div class="carousel-nav">
-                <button class="carousel-btn" onclick="changeSlide(event, -1)">❮</button>
-                <button class="carousel-btn" onclick="changeSlide(event, 1)">❯</button>
-            </div>
-            <div class="carousel-indicators">
-                <span class="indicator active" onclick="goToSlide(event, 0, 'carousel5')"></span>
-                <span class="indicator" onclick="goToSlide(event, 1, 'carousel5')"></span>
-            </div>
-        </div>
-        <div class="content">
-            <h3>Glitch - Mug Thermique</h3>
-            <p>Création d'un logo pour un produit mug thermique avec une affiche pour présenter le produit de manière attrayante.</p>
-        </div>
-    </div>
-
-    <!-- Projet 7 - Carousel Illustrations -->
-    <div class="blok">
-        <div id="carousel6" class="Carousel">
-            <img src="dessin grand.png" alt="Illustration 1" onclick="openLightbox(this.src)">
-            <div class="carousel-slide">
-                <img src="foret.png" alt="Illustration Forêt" onclick="openLightbox(this.src)">
-            </div>
-            <div class="carousel-slide">
-                <img src="desugne perso.png" alt="Design Personnage" onclick="openLightbox(this.src)">
-            </div>
-            <div class="carousel-slide">
-                <img src="iiiiii.png" alt="Illustration 4" onclick="openLightbox(this.src)">
-            </div>
-            <div class="carousel-slide">
-                <img src="model.png" alt="Modèle" onclick="openLightbox(this.src)">
-            </div>
-            <div class="carousel-nav">
-                <button class="carousel-btn" onclick="changeSlide(event, -1)">❮</button>
-                <button class="carousel-btn" onclick="changeSlide(event, 1)">❯</button>
-            </div>
-            <div class="carousel-indicators">
-                <span class="indicator active" onclick="goToSlide(event, 0, 'carousel6')"></span>
-                <span class="indicator" onclick="goToSlide(event, 1, 'carousel6')"></span>
-                <span class="indicator" onclick="goToSlide(event, 2, 'carousel6')"></span>
-                <span class="indicator" onclick="goToSlide(event, 3, 'carousel6')"></span>
-                <span class="indicator" onclick="goToSlide(event, 4, 'carousel6')"></span>
-            </div>
-        </div>
-        <div class="content">
-            <h3>Consepte art</h3>
-            <p>Collection du comspte art de ma serie personnelle.</p>
-        </div>
-    </div>
-
-    <!-- Projet 8 - Carousel Burger King -->
-    <div class="blok">
-        <div id="carousel7" class="Carousel">
-            <img src="burger king.png" alt="Burger King 1" onclick="openLightbox(this.src)">
-            <div class="carousel-slide">
-                <img src="burger king2.png" alt="Burger King 2" onclick="openLightbox(this.src)">
-            </div>
-            <div class="carousel-slide">
-                <img src="burger king3.png" alt="Burger King 3" onclick="openLightbox(this.src)">
-            </div>
-            <div class="carousel-nav">
-                <button class="carousel-btn" onclick="changeSlide(event, -1)">❮</button>
-                <button class="carousel-btn" onclick="changeSlide(event, 1)">❯</button>
-            </div>
-            <div class="carousel-indicators">
-                <span class="indicator active" onclick="goToSlide(event, 0, 'carousel7')"></span>
-                <span class="indicator" onclick="goToSlide(event, 1, 'carousel7')"></span>
-                <span class="indicator" onclick="goToSlide(event, 2, 'carousel7')"></span>
-            </div>
-        </div>
-        <div class="content">
-            <h3>Mise en page</h3>
-            <p>Mise en page d'une annalyse sur la stategi de communication de Burgeur King contre l'harcelement.</p>
-        </div>
-    </div>
-        <div class="blok">
-            <div id="carousel8" class="Carousel">
-                <img src="poste hopital.pdf" alt="Post hopital" onclick="openLightbox(this.src)">
-                <div class="carousel-slide">
-                    <img src="poste2.pdf" alt=" Dexieme post hopital" onclick="openLightbox(this.src)">
-                </div>
-                <div class="carousel-nav">
-                    <button class="carousel-btn" onclick="changeSlide(event, -1)">❮</button>
-                    <button class="carousel-btn" onclick="changeSlide(event, 1)">❯</button>
-                </div>
-                <div class="carousel-indicators">
-                    <span class="indicator active" onclick="goToSlide(event, 0, 'carousel8')"></span>
-                    <span class="indicator" onclick="goToSlide(event, 1, 'carousel8')"></span>
-                </div>
-            </div>
-        <div class="content">
-            <h3>Post pour l'hopital</h3>
-            <p>Colaboration entre l'hopital Emile du Roux et les 2eme année MMI, pour fair une campagne RSE. Avec mon group on a choisi de fair sur les handicapé et voici les poste que j'ai fais pour sait campagne.</p>
-        </div>
-    </div>
-<div class="gmail">
-   <h2>contacter moi par gmail</h2>
-   <p>nunezangelina07@gmail.com</p>
-</div>
-    <!-- Lightbox -->
-    <div class="lightbox" id="lightbox">
-        <button class="lightbox-close" onclick="closeLightbox()">✕</button>
-        <div class="lightbox-content">
-            <img id="lightboxImg" class="lightbox-img" src="" alt="">
-        </div>
-    </div>
 </body>
-
 </html>
-
-
-
-
-
-
