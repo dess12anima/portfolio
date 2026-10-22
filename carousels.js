@@ -11,9 +11,14 @@ const DATA = {
   /* ---------- NEW : mets ici tes projets les plus récents ---------- */
   new: [
     {
-      title: "Back to Memory Steampunk",
-      text: "Création d'un teaser sur After Effects pour le jeu Back to Memory Steampunk 2077 créé par les étudiants de première année du BUT Informatique.",
-      media: [{ t: 'yt', id: 'XvOsC1uv11E' }]
+           title: "Chart graphique Abela",
+      text: "Chart graphique de la marque fictive Abela : logo, couleurs, typographies et déclinaisons de l'identité visuelle.",
+      media: [
+        { t: 'img', src: 'Chart graphique Abela 1.png', alt: 'Chart graphique Abela 1' },
+        { t: 'img', src: 'Chart graphique Abela 2.png', alt: 'Chart graphique Abela 2' },
+        { t: 'img', src: 'Chart graphique Abela 3.png', alt: 'Chart graphique Abela 3' },
+        { t: 'img', src: 'Chart graphique Abela 4.png', alt: 'Chart graphique Abela 4' }
+      ]
     },
     {
       title: "Pub Glitch",
