@@ -14,10 +14,10 @@ const DATA = {
            title: "Chart graphique Abela",
       text: "Chart graphique de la marque fictive Abela : logo, couleurs, typographies et déclinaisons de l'identité visuelle.",
       media: [
-        { t: 'img', src: 'Chart graphique Abela 1.png', alt: 'Chart graphique Abela 1' },
-        { t: 'img', src: 'Chart graphique Abela 2.png', alt: 'Chart graphique Abela 2' },
-        { t: 'img', src: 'Chart graphique Abela 3.png', alt: 'Chart graphique Abela 3' },
-        { t: 'img', src: 'Chart graphique Abela 4.png', alt: 'Chart graphique Abela 4' }
+        { t: 'img', src: 'Chart graphique Abela.png', alt: 'Chart graphique Abela 1' },
+        { t: 'img', src: 'Chart graphique Abela2.png', alt: 'Chart graphique Abela 2' },
+        { t: 'img', src: 'Chart graphique Abela3.png', alt: 'Chart graphique Abela 3' },
+        { t: 'img', src: 'Chart graphique Abela4.png', alt: 'Chart graphique Abela 4' }
       ]
     },
     {
