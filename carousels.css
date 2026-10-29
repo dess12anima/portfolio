@@ -24,7 +24,7 @@
 .pf-main-title { text-align: center; margin-bottom: 2rem; }
 .pf-block {
     max-width: 1200px;
-    margin: 0 auto 3rem;
+    margin: 0 auto 2rem;
     padding: 0 4.5rem;          /* marge gauche/droite : laisse la place aux flèches */
     box-sizing: border-box;
 }
