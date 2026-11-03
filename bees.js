@@ -4,8 +4,8 @@
    2) Écris leurs noms dans CONFIG.images
    ===================================================== */
 const CONFIG = {
-  images: ['abeille1.svg', 'abeille2.svg', 'abeille3.svg'], // <-- tes fichiers
-  count: 7,          // nombre d'abeilles à l'écran
+  images: ['bee1.svg', 'bee2.svg', 'bee3.svg', 'bee4.svg','bee5.svg','bee6.svg'], // <-- tes fichiers
+  count: 6,          // nombre d'abeilles à l'écran
   minSize: 36,       // taille min (px)
   maxSize: 84,       // taille max (px)
   speed: 55,         // vitesse moyenne (px/seconde)
