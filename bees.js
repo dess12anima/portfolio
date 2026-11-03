@@ -4,14 +4,15 @@
    2) Écris leurs noms dans CONFIG.images
    ===================================================== */
 const CONFIG = {
-  images: ['bee1.svg', 'bee2.svg', 'bee3.svg', 'bee4.svg','bee5.svg','bee6.svg'], // <-- tes fichiers
-  count: 6,          // nombre d'abeilles à l'écran
+  images: ['abeille1.svg', 'abeille2.svg', 'abeille3.svg'], // <-- tes fichiers
+  count: 7,          // nombre d'abeilles à l'écran
   minSize: 36,       // taille min (px)
   maxSize: 84,       // taille max (px)
   speed: 55,         // vitesse moyenne (px/seconde)
   faceRight: true,   // true si tes abeilles regardent vers la DROITE sur le dessin
-  behind: false      // false = elles volent par-dessus la page
-                     // true  = derrière (visible seulement si les sections sont transparentes)
+  behind: true,      // true  = elles volent DERRIÈRE le texte (recommandé pour la lecture)
+                     // false = elles volent par-dessus la page
+  opacity: 0.45      // transparence des abeilles (0 = invisibles, 1 = pleines)
 };
 
 (function () {
@@ -22,7 +23,14 @@ const CONFIG = {
     #bees { position: fixed; inset: 0; overflow: hidden; pointer-events: none;
             z-index: ${CONFIG.behind ? -1 : 50}; }
     #bees img { position: absolute; left: 0; top: 0; will-change: transform;
-                user-select: none; -webkit-user-drag: none; }`;
+                opacity: ${CONFIG.opacity};
+                user-select: none; -webkit-user-drag: none; }
+    ${CONFIG.behind ? `
+    /* fonds légèrement transparents : on devine les abeilles derrière le texte */
+    .about { background: rgba(248, 249, 250, .78) !important; }
+    .gmail { background: rgba(255, 255, 255, .78) !important; }
+    .pf-card { background: #f1f1f1 !important; }  /* cartes opaques : texte toujours net */
+    ` : ''}`;
   document.head.appendChild(style);
 
   const layer = document.createElement('div');
