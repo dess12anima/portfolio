@@ -23,14 +23,29 @@
     --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.3);
 }
 
+/* Fond (feuille A3) : posé À L'HORIZONTAL, plein écran, et il reste fixe quand on défile
+   (le dessin est tourné de 90° pour remplir un écran en paysage) */
 body::before {
     content: '';
     position: fixed;
-    inset: 0;
+    top: 50%;
+    left: 50%;
+    width: 100vh;                 /* largeur et hauteur inversées, puis rotation de 90° */
+    height: 100vw;
+    transform: translate(-50%, -50%) rotate(90deg);
     z-index: -1;
     pointer-events: none;
-    background: url('fondbook.svg') center / auto 80vh no-repeat;  /* 80vh = taille : baisse pour plus petit */
-    opacity: 0.15;                                                  /* 0.15 = transparence : 0 invisible, 1 plein */
+    background: url('fondbook.svg') center / contain no-repeat;
+    opacity: 0.15;                /* transparence : 0 invisible, 1 plein */
+}
+ 
+/* Téléphone en mode portrait : pas de rotation, la feuille reste verticale */
+@media (orientation: portrait) {
+    body::before {
+        width: 100vw;
+        height: 100vh;
+        transform: translate(-50%, -50%);
+    }
 }
  
 body {
