@@ -35,8 +35,8 @@ body::before {
     transform: translate(-50%, -50%) rotate(90deg);
     z-index: -1;
     pointer-events: none;
-    background: url('fondbook.svg') center / contain no-repeat;
-    opacity: 0.15;                /* transparence : 0 invisible, 1 plein */
+    background: url('fondbook.svg') center / cover no-repeat; 
+    opacity: 0.55;                /* transparence : 0 invisible, 1 plein */
 }
  
 /* Téléphone en mode portrait : pas de rotation, la feuille reste verticale */
