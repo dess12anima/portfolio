@@ -24,6 +24,10 @@
 }
 
 body {
+    background-image: url('fondbook.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: var(--text-dark);
     overflow-x: hidden;
