@@ -21,9 +21,9 @@ const DATA = {
       ]
     },
     {
-      title: "Pub Glitch",
-      text: "Création d'une pub pour l'entreprise Glitch Production en équipe. J'ai réalisé le storyboard et animé les marionnettes. Je me suis aussi occupée de la caméra avec un autre membre de notre équipe.",
-      media: [{ t: 'yt', id: 'bMLInFtgMm4' }]
+      title: "Page de couverture du livre Tela del Sol",
+      text: "Réalisation d’une page de couverture pour un livre fictif, Tela del Sol, réalisée seule avec l’application Affinity..",
+      media: [{ t: 'img, src: 'affiche.svg', alt: 'Couverture du livre Tela del Sol' }]
     },
     {
       title: "Post pour l'Hôpital",
