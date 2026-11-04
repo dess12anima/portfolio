@@ -23,11 +23,17 @@
     --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.3);
 }
 
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background: url('fondbook.svg') center / auto 80vh no-repeat;  /* 80vh = taille : baisse pour plus petit */
+    opacity: 0.15;                                                  /* 0.15 = transparence : 0 invisible, 1 plein */
+}
+ 
 body {
-    background-image: url('fondbook.svg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: var(--text-dark);
     overflow-x: hidden;
