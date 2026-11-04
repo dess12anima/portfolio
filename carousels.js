@@ -23,7 +23,7 @@ const DATA = {
     {
       title: "Page de couverture du livre Tela del Sol",
       text: "Réalisation d’une page de couverture pour un livre fictif, Tela del Sol, réalisée seule avec l’application Affinity.",
-      media: [{ t: 'img, src: 'affiche.svg', alt: 'Couverture du livre Tela del Sol' }]
+      media: [{ t: 'img', src: 'affiche.svg', alt: 'Couverture du livre Tela del Sol' }]
     },
     {
       title: "Post pour l'Hôpital",
